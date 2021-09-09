@@ -46,14 +46,14 @@ class Tamagotchi {
     } 
     getStatus() {
         if(this.hunger < 5) {
-          return "i am hungry" 
+          return "i am hungry"
         }
         if(this.fatigue < 5) {
-            return "i am tired" 
-         }
+            return "i am tired"
+        }
         if(this.mood < 5) {
-            return "i am happy" 
-         }
+            return "i am happy"
+        }
          else {
             return " blahblahblah" 
          }
@@ -62,7 +62,44 @@ class Tamagotchi {
 }    
 const my_tamagotchi = new Tamagotchi(name)
 
-// Ausgabe in Konsole
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Eprobots JS Tutorial - Start");
+    function startstop_button_handler(){console.log("start stop button clicked");}
+    document.getElementById("btn_start_stop").addEventListener("click", startstop_button_handler);
+
+    function play_button_handler(){console.log("play button clicked");}
+    document.getElementById("btn_play").addEventListener("click", play_button_handler);
+
+    function feed_button_handler(){console.log("feed button clicked");}
+    document.getElementById("btn_feed").addEventListener("click", feed_button_handler);
+
+    function sleep_button_handler(){console.log("sleep button clicked");}
+    document.getElementById("btn_sleep").addEventListener("click", sleep_button_handler);
+
+    function pet_button_handler(){console.log("pet button clicked");}
+    document.getElementById("btn_pet").addEventListener("click", pet_button_handler);});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ausgabe in Konsole
 // ===================
 console.log("Hallo ich bin " + my_tamagotchi.getname())
 console.log(my_tamagotchi.getStatus())
@@ -80,4 +117,9 @@ alert(my_tamagotchi.eat())
 alert(my_tamagotchi.play())
 alert(my_tamagotchi.sleep())
 alert(my_tamagotchi.pet())
-alert(my_tamagotchi)
+*/
+
+
+
+
+
