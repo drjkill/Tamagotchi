@@ -2,63 +2,60 @@
 
 class Tamagotchi {
 
-    constructor(name, hunger, mood, fatigue) {
+    constructor(name, hunger, mood, fatigue,hunger_limit, mood_limit, fatigue_limit) {
         this.name    = prompt("Wie soll Dein Tamagotchi heißen?");
         this.hunger  = hunger  = 0
         this.mood    = mood    = 0
         this.fatigue = fatigue = 0
+        this.hunger_limit  =  5 
+        this.mood_limit    =  5
+        this.fatigue_limit =  5
+
     }
     getname () {
         return this.name
     }
-    play (playing) {
-        if(this.hunger > 5) {
+    play () {
+        if(this.hunger < this.hunger_limit) {
         this.hunger  += 2
-        this.mood    += 2
-        this.fatigue += 3
-        }else {
-        this.hunger  += 1
         this.mood    += 2
         this.fatigue += 3
         }
         return `${this.name} is playing`
     } 
-    eat  (eating) {
-        if(this.fatigue > 5){
+    eat  () {
+        if(this.fatigue < this.fatigue_limit){
         this.hunger  -= 3
         this.fatigue += 2 
-        } else {
-            this.hunger  -= 3
-            this.fatigue += 1 
-        }
+        } 
         return `${this.name} is eating`
     }
-    sleep(sleeping) {
-        if(this.hunger > 5) {
+    sleep() {
+        if(this.hunger > this.hunger_limit) {
         this.hunger  += 1
-        this.mood    += 1
+        this.mood    -= 1
         this.fatigue += 0
         }
         else {
             this.hunger  += 1
-            this.mood    -= 1
+            this.mood    += 1
             this.fatigue -= 2
         }
         return `${this.name} is sleeping`
     }
-    pet  (petting) {
+    pet  () {
         this.hunger  += 1
         this.mood    += 1
         return `petting ${this.name}`
     } 
     getStatus() {
-        if(this.hunger > 5) {
+        if(this.hunger > this.hunger_limit) {
           return "i am hungry"
         }
-        if(this.fatigue > 5) {
+        if(this.fatigue > this.fatigue_limit) {
             return "i am tired"
         }
-        if(this.mood > 5) {
+        if(this.mood > this.mood_limit) {
             return "i'm not happy"
         }
          else {
@@ -67,7 +64,7 @@ class Tamagotchi {
 
     }
 }    
-const my_tamagotchi = new Tamagotchi(name)
+const my_tamagotchi = new Tamagotchi(name,5,5,5)
 
 console.log("Hello i'm' " + my_tamagotchi.getname())
       alert("Hallo i'm' " + my_tamagotchi.getname())
@@ -82,34 +79,34 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(my_tamagotchi.getStatus())
               alert(my_tamagotchi.getStatus())
     }
-    document.getElementById("btn_status").addEventListener("click", status_button_handler);
+    document.getElementById("btn_status")?.addEventListener("click", status_button_handler);
 
     function play_button_handler() {
-        my_tamagotchi.play(1)
-        console.log(my_tamagotchi.play())
-              alert(my_tamagotchi.play())
+        const result =my_tamagotchi.play()
+        console.log(result)
+              alert(result)
     }
-    document.getElementById("btn_play").addEventListener("click", play_button_handler);
+    document.getElementById("btn_play")?.addEventListener("click", play_button_handler);
 
     function feed_button_handler() {
-        my_tamagotchi.eat(1)
-        console.log(my_tamagotchi.eat())
-              alert(my_tamagotchi.eat())
+        const result =my_tamagotchi.eat()
+        console.log(result)
+              alert(result)
     }
-    document.getElementById("btn_feed").addEventListener("click", feed_button_handler);
+    document.getElementById("btn_feed")?.addEventListener("click", feed_button_handler);
 
     function sleep_button_handler() {
-        my_tamagotchi.sleep(1)
-        console.log(my_tamagotchi.sleep())
-              alert(my_tamagotchi.sleep())
+        const result =my_tamagotchi.sleep()
+        console.log(result)
+              alert(result)
     }
-    document.getElementById("btn_sleep").addEventListener("click", sleep_button_handler);
+    document.getElementById("btn_sleep")?.addEventListener("click", sleep_button_handler);
 
     function pet_button_handler() {
-        my_tamagotchi.pet(1)
-        console.log(my_tamagotchi.pet())
-              alert(my_tamagotchi.pet())
+        const result = my_tamagotchi.pet()
+        console.log(result)
+              alert(result)
     }
-    document.getElementById("btn_pet").addEventListener("click", pet_button_handler);});
+    document.getElementById("btn_pet")?.addEventListener("click", pet_button_handler);});
 
 
