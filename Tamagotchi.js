@@ -66,8 +66,9 @@ class Tamagotchi {
 }    
 const my_tamagotchi = new Tamagotchi(name,5,5,5)
 
-console.log("Hello i'm' " + my_tamagotchi.getname())
-      alert("Hallo i'm' " + my_tamagotchi.getname())
+console.log("Hello i'm " + my_tamagotchi.getname())
+// @ts-ignore
+document.getElementById("output_name").innerHTML = "Hello i'm " + my_tamagotchi.getname()
 
 // Button Event listener
 // =======================
@@ -77,35 +78,36 @@ document.addEventListener("DOMContentLoaded", function() {
     function status_button_handler() {
         console.log(my_tamagotchi);
         console.log(my_tamagotchi.getStatus())
-              alert(my_tamagotchi.getStatus())
+        // @ts-ignore
+        document.getElementById("output_status").innerHTML = my_tamagotchi.getStatus()
     }
     document.getElementById("btn_status")?.addEventListener("click", status_button_handler);
 
     function play_button_handler() {
-        const result =my_tamagotchi.play()
-        console.log(result)
-              alert(result)
+        const result =my_tamagotchi.play()        
+        // @ts-ignore
+        document.getElementById("output_action").innerHTML = result 
     }
     document.getElementById("btn_play")?.addEventListener("click", play_button_handler);
 
     function feed_button_handler() {
         const result =my_tamagotchi.eat()
-        console.log(result)
-              alert(result)
+        // @ts-ignore
+        document.getElementById("output_action").innerHTML = result
     }
     document.getElementById("btn_feed")?.addEventListener("click", feed_button_handler);
 
     function sleep_button_handler() {
         const result =my_tamagotchi.sleep()
-        console.log(result)
-              alert(result)
+        // @ts-ignore
+        document.getElementById("output_action").innerHTML = result
     }
     document.getElementById("btn_sleep")?.addEventListener("click", sleep_button_handler);
 
     function pet_button_handler() {
         const result = my_tamagotchi.pet()
-        console.log(result)
-              alert(result)
+        // @ts-ignore
+        document.getElementById("output_action").innerHTML = result
     }
     document.getElementById("btn_pet")?.addEventListener("click", pet_button_handler);});
 
