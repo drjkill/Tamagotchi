@@ -15,8 +15,10 @@ class Tamagotchi {
     getname () {
         return this.name
     }
+    
+        
     play () {
-        if(this.hunger < this.hunger_limit) {
+        if(this.hunger < this.hunger_limit  ) {
         this.hunger  += 2
         this.mood    += 2
         this.fatigue += 3
@@ -24,14 +26,14 @@ class Tamagotchi {
         return `${this.name} is playing`
     } 
     eat  () {
-        if(this.fatigue < this.fatigue_limit){
+        if(this.fatigue < this.fatigue_limit ){
         this.hunger  -= 3
         this.fatigue += 2 
         } 
         return `${this.name} is eating`
     }
     sleep() {
-        if(this.hunger > this.hunger_limit) {
+        if(this.hunger > this.hunger_limit ) {
         this.hunger  += 1
         this.mood    -= 1
         this.fatigue += 0
@@ -44,10 +46,13 @@ class Tamagotchi {
         return `${this.name} is sleeping`
     }
     pet  () {
+        
         this.hunger  += 1
         this.mood    += 1
+        
         return `petting ${this.name}`
     } 
+
     getStatus() {
         if(this.hunger > this.hunger_limit) {
           return "i am hungry"
@@ -63,7 +68,8 @@ class Tamagotchi {
          }
 
     }
-}    
+}
+    
 const my_tamagotchi = new Tamagotchi(name,5,5,5)
 
 console.log("Hello i'm " + my_tamagotchi.getname())
@@ -110,5 +116,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("output_action").innerHTML = result
     }
     document.getElementById("btn_pet")?.addEventListener("click", pet_button_handler);});
+
+
+
 
 
