@@ -12,7 +12,7 @@ class Tamagotchi {
         this.fatigue_limit =  5
 
     }
-    getname () {
+    getName () {
         return this.name
     }
     
@@ -36,12 +36,12 @@ class Tamagotchi {
         if(this.hunger > this.hunger_limit ) {
         this.hunger  += 1
         this.mood    -= 1
-        this.fatigue += 0
+        this.fatigue = 0
         }
         else {
             this.hunger  += 1
             this.mood    += 1
-            this.fatigue -= 2
+            this.fatigue = 0
         }
         return `${this.name} is sleeping`
     }
@@ -70,11 +70,11 @@ class Tamagotchi {
     }
 }
     
-const my_tamagotchi = new Tamagotchi(name,5,5,5)
+const myTamagotchi = new Tamagotchi(name,5,5,5)
 
-console.log("Hello i'm " + my_tamagotchi.getname())
+console.log("Hello i'm " + myTamagotchi.getName())
 // @ts-ignore
-document.getElementById("output_name").innerHTML = "Hello i'm " + my_tamagotchi.getname()
+document.getElementById("output_name").innerHTML = "Hello i'm " + myTamagotchi.getName()
 
 // Button Event listener
 // =======================
@@ -82,36 +82,36 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Tamagotchi - Start");
     
     function status_button_handler() {
-        console.log(my_tamagotchi);
-        console.log(my_tamagotchi.getStatus())
+        console.log(myTamagotchi);
+        console.log(myTamagotchi.getStatus())
         // @ts-ignore
-        document.getElementById("output_status").innerHTML = my_tamagotchi.getStatus()
+        document.getElementById("output_status").innerHTML = myTamagotchi.getStatus()
     }
     document.getElementById("btn_status")?.addEventListener("click", status_button_handler);
 
     function play_button_handler() {
-        const result =my_tamagotchi.play()        
+        const result =myTamagotchi.play()        
         // @ts-ignore
         document.getElementById("output_action").innerHTML = result 
     }
     document.getElementById("btn_play")?.addEventListener("click", play_button_handler);
 
     function feed_button_handler() {
-        const result =my_tamagotchi.eat()
+        const result =myTamagotchi.eat()
         // @ts-ignore
         document.getElementById("output_action").innerHTML = result
     }
     document.getElementById("btn_feed")?.addEventListener("click", feed_button_handler);
 
     function sleep_button_handler() {
-        const result =my_tamagotchi.sleep()
+        const result =myTamagotchi.sleep()
         // @ts-ignore
         document.getElementById("output_action").innerHTML = result
     }
     document.getElementById("btn_sleep")?.addEventListener("click", sleep_button_handler);
 
     function pet_button_handler() {
-        const result = my_tamagotchi.pet()
+        const result = myTamagotchi.pet()
         // @ts-ignore
         document.getElementById("output_action").innerHTML = result
     }
