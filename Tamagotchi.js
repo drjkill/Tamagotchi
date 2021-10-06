@@ -70,7 +70,7 @@ class Tamagotchi {
     }
 }
     
-const myTamagotchi = new Tamagotchi(name,5,5,5)
+const myTamagotchi = new Tamagotchi(name,7,7,7)
 
 console.log("Hello i'm " + myTamagotchi.getName())
 // @ts-ignore
