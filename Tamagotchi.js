@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function play_button_handler() {
         const result =myTamagotchi.play()        
+       
         // @ts-ignore
         document.getElementById("output_action").innerHTML = result 
     }
