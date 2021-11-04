@@ -2,7 +2,7 @@
 //import { Tamagotchi } from "./Tamagotchi";
 class Tamagotchi {
     constructor(name, hunger, mood, fatigue) {
-        this.name = name; //prompt("Wie soll Dein Tamagotchi heißen?");
+        this.name = prompt("Wie soll Dein Tamagotchi heißen?");
         this.hunger = hunger = 0;
         this.mood = mood = 0;
         this.fatigue = fatigue = 0;

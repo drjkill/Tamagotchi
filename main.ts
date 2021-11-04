@@ -1,6 +1,6 @@
 //import { Tamagotchi } from "./Tamagotchi";
  class Tamagotchi {
-    name:                  string
+    name:                  string           
     hunger:                number
     mood:                  number
     fatigue:               number
@@ -9,7 +9,7 @@
     private fatigue_limit: number
  
     constructor(name: string, hunger: number, mood: number, fatigue: number) {
-        this.name    = name//prompt("Wie soll Dein Tamagotchi heißen?");
+        this.name    = prompt("Wie soll Dein Tamagotchi heißen?");
         this.hunger  = hunger  = 0
         this.mood    = mood    = 0
         this.fatigue = fatigue = 0
